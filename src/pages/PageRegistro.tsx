@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, } from 'react-native';
-import Login from '../Componentes/Login';
+import Registro from '../Componentes/Registro';
 
 // const {height} = Dimensions.get('window');
 
-const PageLogin = () => {
+const PageRegisto = () => {
   return (
     <View>  
-        <Login />
+        <Registro />
     </View>
   );
 };
-export default PageLogin;
+export default PageRegisto;

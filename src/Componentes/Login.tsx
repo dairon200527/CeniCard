@@ -1,4 +1,4 @@
-import ract from 'react';
+import React from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, navigation } from 'react-native';
  import styles from '../css/Login';
 
@@ -7,12 +7,12 @@ const Login = () => {
     <View>
 
         <View style={styles.containerfondo}>
-            <Image>
-                source={require('aca va el logo en una equina .-.')} >
+            <Image
+                source={require('../Img/chicha_logins.png')} >
             </Image>
 
-            <Image>
-                source={require('aca va la imagen')} >
+            <Image
+                source={require('../Img/chicha_logins.png')} >
             </Image>
 
         </View>

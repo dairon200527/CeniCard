@@ -1,5 +1,5 @@
-import ract from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity, navigation } from 'react-native';
+import React from 'react';
+import { View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
  import styles from '../css/Registro';
 
 const Login = () => {
@@ -8,12 +8,12 @@ const Login = () => {
 
 
         <View style={styles.containerfondo}>
-            <Image>
-                source={require('aca va el logo en una equina .-.')} >
+            <Image
+                source={require('../Img/logo_sema_cenmicard.png')} >
             </Image>
 
-            <Image>
-                source={require('aca va la imagen')} >
+            <Image
+                source={require('../Img/logo_sema_cenmicard.png')} >
             </Image>
 
         </View>
