@@ -1,58 +1,81 @@
+import { Nunito_400Regular, Nunito_700Bold, Nunito_800ExtraBold, useFonts } from '@expo-google-fonts/nunito';
 import React from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity, navigation } from 'react-native';
- import styles from '../css/Login';
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import styles from '../css/Login';
 
 const Login = () => {
+
+    ///estilo letras
+    const [fontsLoaded] = useFonts({
+    Nunito_800ExtraBold,
+    Nunito_400Regular,
+    Nunito_700Bold,
+  });
+
+  if (!fontsLoaded) return null;
+
+
   return (
+    
+
     <View>
 
-        <View style={styles.containerfondo}>
-            <Image
-                source={require('../Img/chicha_logins.png')} >
-            </Image>
+      {/* ── Header verde con fotos ── */}
+      <View style={styles.containerfondo}>
+        <Image style={styles.chicaimg}
+          source={require('../Img/chica_logins.png')}
+        />
+        <Image style={styles.logoimg}
+          source={require('../Img/logo_sena.png')}
+        />
+      </View>
 
-            <Image
-                source={require('../Img/chicha_logins.png')} >
-            </Image>
+      {/* ── Tarjeta blanca ── */}
+      <View style={styles.LoginContainer}>
 
+        <Text style={styles.title}>Iniciar{'\n'}sesión</Text>
+
+        <Text style={styles.subtitle}>
+          ¡Bienvenido a <Text style={styles.subtitleBold}>CENICARD</Text>!
+        </Text>
+
+        <Text style={styles.inputLabel}>Documento</Text>
+        <TextInput
+          style={styles.input}
+          placeholderTextColor="#8B9F8F"
+          keyboardType="numeric"
+        />
+
+        <Text style={styles.inputLabel}>Contraseña</Text>
+        <TextInput
+          style={styles.input}
+          placeholderTextColor="#8B9F8F"
+          secureTextEntry={true}
+        />
+
+         <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>INGRESAR</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Text style={styles.forgotPassword}>¿Olvidaste tu contraseña?</Text>
+        </TouchableOpacity>
+
+       
+
+        <View style={styles.registerRow}>
+          <Text style={styles.registerText}>¿No tienes una cuenta aún? </Text>
+          <TouchableOpacity>
+            <Text style={styles.registerLink}>Regístrate ahora</Text>
+          </TouchableOpacity>
         </View>
 
-        <View style={styles.LoginContainer}>
-            <Text>Iniciar sesion</Text>
-
-            <Text>Bienvenido a cenicard</Text>
-
-            <Text style={styles.inputLabel}>Documento</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-            />
-
-            <Text style={styles.inputLabel}>Contraseña</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-                    secureTextEntry={true}
-            />
-
-            <TouchableOpacity onPress={() => navigation.navigate('aca va el el formu para recuperar contraseña')}>
-                    <Text style={styles.forgotPassword}>¿Olvidaste la{'\n'}contraseña?</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('aca va la pagina de inicio')}>
-                    <Text style={styles.buttonText}>Ingresar</Text>
-            </TouchableOpacity>
-
-
-            <TouchableOpacity onPress={() => navigation.navigate('aca va el el formu para registrarce')}>
-                    <Text style={styles.forgotPassword}>no tiebes cuenta aun registrate ahora</Text>
-            </TouchableOpacity>
-
-        </View>
+      </View>
+      
 
     </View>
-    
-    
+   
+   
   );
 };
 

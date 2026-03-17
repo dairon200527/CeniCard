@@ -1,19 +1,21 @@
-import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
 
-import Barranav from "../Componentes/Barranav"
+
+import Login from "../Componentes/Login";
 
 const Stack = createNativeStackNavigator();
 
-export default function StackNavigation() {
+export default function Navegacion() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
 
         <Stack.Screen 
-          name="Barranav" 
-          component={Barranav}
+          name="Login" 
+          component={Login}
+          options={{headerShown: false}}
         />
 
       </Stack.Navigator>
