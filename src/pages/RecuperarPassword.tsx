@@ -1,8 +1,8 @@
 import React from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
-import Registro from '../Componentes/Registro';
+import RecuperarPassword from '../Componentes/RecuperarPassword';
 
-const PageRegistro = () => {
+const PageRecuperarPassword = () => {
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
@@ -13,10 +13,10 @@ const PageRegistro = () => {
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
       >
-        <Registro />
+        <RecuperarPassword />
       </ScrollView>
     </KeyboardAvoidingView>
   );
 };
 
-export default PageRegistro;
+export default PageRecuperarPassword;

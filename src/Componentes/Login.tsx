@@ -1,38 +1,29 @@
-import { Nunito_400Regular, Nunito_700Bold, Nunito_800ExtraBold, useFonts } from '@expo-google-fonts/nunito';
-import React from 'react';
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import styles from '../css/Login';
+import { CommonActions } from '@react-navigation/native';
+import React from "react";
+import {
+  Image, Text, TextInput,
+  TouchableOpacity, View
+} from "react-native";
+import styles from "../css/Login";
 
-const Login = () => {
-
-    ///estilo letras
-    const [fontsLoaded] = useFonts({
-    Nunito_800ExtraBold,
-    Nunito_400Regular,
-    Nunito_700Bold,
-  });
-
-  if (!fontsLoaded) return null;
-
-
+const Login = ({navigation}: any) => {
   return (
-    
+    <View style={styles.fondoinicial}>
 
-    <View>
-
-      {/* ── Header verde con fotos ── */}
+      {/* Fondo */}
       <View style={styles.containerfondo}>
-        <Image style={styles.chicaimg}
+        <Image
+          style={styles.chicaimg}
           source={require('../Img/chica_logins.png')}
         />
-        <Image style={styles.logoimg}
+        <Image
+          style={styles.logoimg}
           source={require('../Img/logo_sena.png')}
         />
       </View>
 
-      {/* ── Tarjeta blanca ── */}
+      {/* Card encima */}
       <View style={styles.LoginContainer}>
-
         <Text style={styles.title}>Iniciar{'\n'}sesión</Text>
 
         <Text style={styles.subtitle}>
@@ -42,6 +33,7 @@ const Login = () => {
         <Text style={styles.inputLabel}>Documento</Text>
         <TextInput
           style={styles.input}
+          placeholder="Ingresa tu documento"
           placeholderTextColor="#8B9F8F"
           keyboardType="numeric"
         />
@@ -49,33 +41,37 @@ const Login = () => {
         <Text style={styles.inputLabel}>Contraseña</Text>
         <TextInput
           style={styles.input}
+          placeholder="Ingresa tu contraseña"
           placeholderTextColor="#8B9F8F"
-          secureTextEntry={true}
+          secureTextEntry
         />
 
-         <TouchableOpacity style={styles.button}>
+
+        <TouchableOpacity style={styles.button} onPress={() => {
+            navigation.dispatch(
+            CommonActions.reset({
+            index: 0,
+            routes: [{ name: 'PageInicio' }],
+    })
+  );
+}}>
           <Text style={styles.buttonText}>INGRESAR</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity>
+ 
+        <TouchableOpacity onPress={() => navigation.navigate('RecuperarPassword')}>
           <Text style={styles.forgotPassword}>¿Olvidaste tu contraseña?</Text>
         </TouchableOpacity>
 
-       
-
+    
         <View style={styles.registerRow}>
-          <Text style={styles.registerText}>¿No tienes una cuenta aún? </Text>
-          <TouchableOpacity>
-            <Text style={styles.registerLink}>Regístrate ahora</Text>
+            <Text style={styles.registerText}>¿No tienes una cuenta aún?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Registro')}>
+            <Text style={styles.registerLink}> Regístrate ahora</Text>
           </TouchableOpacity>
         </View>
-
       </View>
-      
 
     </View>
-   
-   
   );
 };
 

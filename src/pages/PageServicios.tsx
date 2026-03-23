@@ -2,16 +2,16 @@ import React from 'react';
 import { View } from 'react-native';
 import Barranav from '../Componentes/Barranav';
 import Barrasup from '../Componentes/Barrasup';
-import Inicio from '../Componentes/Inicio';
+import Servicios from '../Componentes/Servicios';
 
-const PageInicio = ({ navigation }: any) => {
+const PageServicios = ({ navigation }: any) => {
   return (
-    <View style={{ flex: 1,  }}>
+    <View style={{ flex: 1, backgroundColor: '#F4F4F4' }}>
       <Barrasup />
-      <Inicio />
+      <Servicios/>
       <Barranav navigation={navigation} />
     </View>
   );
 };
 
-export default PageInicio;
+export default PageServicios;

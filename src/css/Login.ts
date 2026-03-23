@@ -1,171 +1,136 @@
 import { Dimensions, StyleSheet } from 'react-native';
- 
-const { width, height } = Dimensions.get('window');
 
-const GREEN_DARK  = '#007A3D';
-const GREEN_MID   = '#009A4E';
-const GREEN_LIGHT = '#D6EFE0';
-const WHITE       = '#FFFFFF';
-const GRAY_TEXT   = '#5A6B5A';
-const GRAY_LABEL  = '#3D3D3D';
+const { height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
 
-    screen: {
+  fondoinicial: {
     flex: 1,
-  },
-  
-    scroll: {
-    flexGrow: 1,
+    backgroundColor: '#007832',
   },
 
-   containerfondo: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#007A3D',
-    overflow: 'visible',
-    position: 'relative',
-    marginBottom: -28,
-  },
+  containerfondo: {
+  height: 260, 
+  backgroundColor: '#007832',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+},
 
   chicaimg: {
-    position: 'absolute',
-    top:'-34%',
-    left: '15%',
-    width: '65%',
-    height: '100%',
+    width: '68%',
+    height: 220,
     resizeMode: 'contain',
+    right :10,
   },
- 
-  // Logo SENA — esquina superior derecha
+
   logoimg: {
     position: 'absolute',
     top: 30,
-    right: 16,
-    width: 90,
-    height: 90,
+    right: 13,
+    width: 78,
+    height: 88,
     resizeMode: 'contain',
   },
 
-  LoginContainer: {
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
-  right: 0,
-  backgroundColor: WHITE,
-  borderTopLeftRadius: 80,
+ LoginContainer: {
+  backgroundColor: '#FFFFFF',
+  borderTopLeftRadius: 92,
   paddingHorizontal: 28,
-  paddingTop: 72,
-  paddingBottom: 40,
+  paddingTop: 32,
+  paddingBottom: 520, 
+  marginTop: 0,
 },
 
-
-
-//////////////////////////////////
-
-title: {
-    fontSize: 50,
-    fontFamily: 'Nunito_800ExtraBold', 
+  title: {
+    fontSize: 48,
     fontWeight: '800',
-    color: 'black',
+    color: '#4d4c4c',
     textAlign: 'center',
-    top:-40
+    lineHeight: 44,
+    marginBottom: 8,
   },
- 
-  // Subtítulo 
+
   subtitle: {
-    fontSize: 20,
-    color: GRAY_TEXT,
-    fontFamily: 'Nunito_400Regular',
+    fontSize: 19,
+    color: '#666',
     textAlign: 'center',
     marginBottom: 28,
-    top:-30
+    top:15
   },
- 
+
   subtitleBold: {
-    fontWeight: '800',
-    color: '#1A1A1A',
-    fontFamily: 'Nunito_800ExtraBold'
+    fontWeight: '900',
+    color: '#4d4c4c',
   },
- 
-  // Labels 
+
   inputLabel: {
-    fontSize: 13,
-    fontWeight: '500',
-    color: GRAY_LABEL,
+    fontSize: 16,
+    color: '#333',
     marginBottom: 6,
-    marginLeft: 4,
-    top:-40
+    marginLeft: 2,
+    top:10
   },
- 
-  // Inputs 
+
   input: {
-    backgroundColor: GREEN_LIGHT,
-    borderRadius: 50,
-    height: 48,
-    paddingHorizontal: 20,
-    fontSize: 15,
-    color: '#1A1A1A',
+    backgroundColor: '#c8e6c99a',
+    borderRadius: 30,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    fontSize: 14,
+    color: '#333',
     marginBottom: 16,
-    top:-40
+    top:10
   },
- 
-  // Olvidaste contraseña 
-  forgotPassword: {
-    color: GREEN_MID,
-    fontSize: 13,
-    fontWeight: '700',
-    textAlign: 'center',
-    marginBottom: 26,
-    marginTop: -8,
-    top:-10
 
-
-  },
- 
-  // Botón INGRESAR 
+  
   button: {
-    backgroundColor: GREEN_DARK,
-    borderRadius: 50,
-    height: 52,
-    width:'70%',
-    alignSelf:'center',
-    justifyContent: 'center',
+    backgroundColor: '#2D6A2D',
+    borderRadius: 30,
+    paddingVertical: 16,
+    marginHorizontal:50,
+    top:30,
     alignItems: 'center',
-    marginBottom: 28,
-    shadowRadius: 8,
-    elevation: 6,
-    top:-25
+    marginBottom: 20,
   },
- 
+
+  forgotPassword: {
+    color: '#007832',
+    fontWeight: '600',
+    textAlign: 'center',
+    fontSize: 16,
+    marginBottom: 20,
+    top:40
+    
+  },
+
   buttonText: {
-    color: WHITE,
+    color: '#FFFFFF',
+    fontWeight: '700',
     fontSize: 15,
-    fontWeight: '800',
-    letterSpacing: 2,
+    letterSpacing: 1.6,
   },
- 
-  // Fila registro 
+
   registerRow: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'wrap',
+    top:50,
+   
   },
- 
+
   registerText: {
-    fontSize: 13,
-    color: GRAY_TEXT,
+    fontSize: 14,
+    color: '#666',
   },
- 
+
   registerLink: {
-    fontSize: 13,
+    fontSize: 17,
+    color: '#007832',
     fontWeight: '800',
-    color: GREEN_MID,
+    
   },
 
-
-
-})
+});
 
 export default styles;

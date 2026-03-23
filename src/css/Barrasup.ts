@@ -16,6 +16,9 @@ export default StyleSheet.create({
     shadowOpacity: 0.06,
     shadowRadius: 3,
   },
+  safeArea: {
+  backgroundColor: '#007832', 
+},
   left: {
     flexDirection: 'row',
     alignItems: 'center',

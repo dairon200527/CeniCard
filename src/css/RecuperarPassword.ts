@@ -34,10 +34,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
     borderTopLeftRadius: 92,
-    paddingHorizontal: 24,
-    paddingTop: 32,
+    paddingHorizontal: 28,
+    paddingTop: 36,
     paddingBottom: 40,
-    marginTop: 0,
   },
 
   title: {
@@ -46,42 +45,44 @@ const styles = StyleSheet.create({
     color: '#4d4c4c',
     textAlign: 'center',
     lineHeight: 44,
-    marginBottom: 24,
+    marginBottom: 20,
   },
 
-  
-  row: {
-    flexDirection: 'row',
-    gap: 10,
+  subtitle: {
+    fontSize: 18,
+    color: '#666',
+    textAlign: 'center',
+    lineHeight: 22,
     marginBottom: 12,
   },
 
-  col: {
-    flex: 1,
-  },
-
-  
-  colWide: {
-    flex: 2,
-  },
-
-  colNarrow: {
-    flex: 1,
+  subtitle2: {
+    fontSize: 18,
+    color: '#666',
+    textAlign: 'center',
+    lineHeight: 22,
+    marginBottom: 28,
+    top:10
   },
 
   inputLabel: {
-    fontSize: 15,
-    color: '#333',
-    marginBottom: 5,
+    fontSize: 16,
+    color: '#007832',
+    fontWeight: '700',
+    textAlign: 'center',
+    marginBottom: 10,
+    top:10
   },
 
   input: {
     backgroundColor: '#c8e6c99a',
     borderRadius: 30,
-    paddingHorizontal: 12,
-    paddingVertical: 12,
-    fontSize: 13,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    fontSize: 14,
     color: '#333',
+    marginBottom: 28,
+    top:10
   },
 
   button: {
@@ -89,8 +90,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingVertical: 16,
     marginHorizontal: 50,
-    marginTop: 24,
     alignItems: 'center',
+    top:10
   },
 
   buttonText: {

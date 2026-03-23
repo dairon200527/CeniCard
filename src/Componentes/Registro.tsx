@@ -1,89 +1,89 @@
-import React from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
- import styles from '../css/Registro';
+import React from "react";
+import {
+    Image, Text, TextInput,
+    TouchableOpacity, View
+} from "react-native";
+import styles from "../css/Registro";
 
-const Login = () => {
+const Registro = () => {
   return (
-    <View>
+    <View style={styles.fondoinicial}>
 
+      {/* Fondo */}
+      <View style={styles.containerfondo}>
+        <Image
+          style={styles.chicaimg}
+          source={require('../Img/chica_logins.png')}
+        />
+        <Image
+          style={styles.logoimg}
+          source={require('../Img/logo_sena.png')}
+        />
+      </View>
 
-        <View style={styles.containerfondo}>
-            <Image
-                source={require('../Img/logo_sema_cenmicard.png')} >
-            </Image>
+      {/* Card */}
+      <View style={styles.LoginContainer}>
+        <Text style={styles.title}>Formulario de{'\n'}registro</Text>
 
-            <Image
-                source={require('../Img/logo_sema_cenmicard.png')} >
-            </Image>
-
+        {/* Fila 1 */}
+        <View style={styles.row}>
+          <View style={styles.col}>
+            <Text style={styles.inputLabel}>Primer nombre</Text>
+            <TextInput style={styles.input} placeholderTextColor="#8B9F8F" />
+          </View>
+          <View style={styles.col}>
+            <Text style={styles.inputLabel}>Segundo nombre</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="OPCIONAL"
+              placeholderTextColor="#8B9F8F"
+            />
+          </View>
         </View>
 
-        <View style={styles.RegistroContainer}>
-            <Text>Formulario de registro </Text>
-
-
-            <Text style={styles.inputLabel}>Primer Nombre</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-            />
-
-            <Text style={styles.inputLabel}>Segundo Nombre</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-            />
-
-             <Text style={styles.inputLabel}>Primer apellido</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-            />
-
+        {/* Fila 2 */}
+        <View style={styles.row}>
+          <View style={styles.col}>
+            <Text style={styles.inputLabel}>Primer apellido</Text>
+            <TextInput style={styles.input} placeholderTextColor="#8B9F8F" />
+          </View>
+          <View style={styles.col}>
             <Text style={styles.inputLabel}>Segundo apellido</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-            />
-
-
-            <Text style={styles.inputLabel}>Identificacion</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-            />
-
-            <Text style={styles.inputLabel}>Codigo de ficha</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-            />
-
-             <Text style={styles.inputLabel}>Centro de formacion</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-            />
-
-             <Text style={styles.inputLabel}>RH</Text>
-                <TextInput 
-                    style={styles.input}
-                    placeholderTextColor="#8B9F8F"
-            />
-
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('aca va la pagina de inicio')}>
-                    <Text style={styles.buttonText}>Enviar</Text>
-            </TouchableOpacity>
-
-
-            
-
+            <TextInput style={styles.input} placeholderTextColor="#8B9F8F" />
+          </View>
         </View>
 
+        {/* Fila 3 */}
+        <View style={styles.row}>
+          <View style={styles.col}>
+            <Text style={styles.inputLabel}>Identificación</Text>
+            <TextInput style={styles.input} keyboardType="numeric" placeholderTextColor="#8B9F8F" />
+          </View>
+          <View style={styles.col}>
+            <Text style={styles.inputLabel}>Código de ficha</Text>
+            <TextInput style={styles.input} keyboardType="numeric" placeholderTextColor="#8B9F8F" />
+          </View>
+        </View>
+
+        {/* Fila 4 */}
+        <View style={styles.row}>
+          <View style={styles.colWide}>
+            <Text style={styles.inputLabel}>Centro de formación</Text>
+            <TextInput style={styles.input} placeholderTextColor="#8B9F8F" />
+          </View>
+          <View style={styles.colNarrow}>
+            <Text style={styles.inputLabel}>RH</Text>
+            <TextInput style={styles.input} placeholderTextColor="#8B9F8F" />
+          </View>
+        </View>
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>ENVIAR</Text>
+        </TouchableOpacity>
+
+      </View>
     </View>
-    
-    
   );
 };
 
-export default Login;
+export default Registro;

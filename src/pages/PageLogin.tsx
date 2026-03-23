@@ -1,14 +1,22 @@
 import React from 'react';
-import { View, } from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import Login from '../Componentes/Login';
-
-// const {height} = Dimensions.get('window');
 
 const PageLogin = () => {
   return (
-    <View>  
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1 }}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+      >
         <Login />
-    </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
+
 export default PageLogin;
