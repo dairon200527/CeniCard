@@ -1,5 +1,8 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
+const { width, height } = Dimensions.get('window');
+
+const scale = (size: number) => (width / 375) * size;
 const styles = StyleSheet.create({
 
   fondoinicial: {
@@ -23,12 +26,15 @@ const styles = StyleSheet.create({
   },
 
   carnetCard: {
-    flex: 1,
-    backgroundColor: '#fcfcfc',
-    borderRadius: 20,
-    padding: 20,
-    borderWidth: 1,
-    borderColor: '#E0F0E0',
+     width: width * 0.92,
+  height: height * 0.75,
+  alignSelf: 'center',
+  backgroundColor: '#fcfcfc',
+  borderRadius: scale(20),
+  padding: scale(16),
+  borderWidth: 1,
+  borderColor: '#E0F0E0',
+  overflow: 'hidden', //
   },
 
   carnetAtras: {
@@ -51,13 +57,13 @@ const styles = StyleSheet.create({
   },
 
   logoCarnet: {
-    width: 100,
-    height: 100,
+     width: width * 0.25,
+  height: width * 0.25,
   },
 
   fotoPlaceholder: {
-    width: 160,
-    height: 210,
+    width: width * 0.4,
+  height: height * 0.25,
     backgroundColor: '#E0E0E0',
     borderRadius: 8,
     justifyContent: 'center',
@@ -100,13 +106,13 @@ const styles = StyleSheet.create({
 
   separador: {
     height: 3,
-    backgroundColor: '#2E7D32',
-    marginBottom: 12,
-    width: 340,
+  backgroundColor: '#2E7D32',
+  marginBottom: scale(12),
+  width: '100%',
   },
 
   nombreCompleto: {
-    fontSize: 22,
+    fontSize: scale(18),
     fontWeight: '800',
     color: '#2E7D32',
     marginBottom: 8,
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
   },
 
   campo: {
-    fontSize: 20,
+    fontSize: scale(14),
     color: '#333',
     marginBottom: 6,
   },
@@ -153,7 +159,7 @@ const styles = StyleSheet.create({
   },
 
   centro: {
-    fontSize: 17,
+    fontSize:scale(13),
     color: '#2E7D32',
     fontWeight: '700',
     top:20
@@ -340,10 +346,10 @@ const styles = StyleSheet.create({
   },
 
   modalBtnText: {
-    color: '#fff',
-    fontWeight: '700',
-    fontSize: 14,
-    letterSpacing: 1.2,
+   color: '#fff',
+fontWeight: '700',
+fontSize: 14,
+letterSpacing: 1.2,
   },
 
   modalCancelar: {

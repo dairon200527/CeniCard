@@ -10,13 +10,19 @@
     },
     "android": {
       "edgeToEdgeEnabled": true,
-      "softwareKeyboardLayoutMode": "pan"
+      "softwareKeyboardLayoutMode": "pan",
+      "package": "com.dairon27.cenicard"
     },
     "web": {
       "output": "single"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3da4b001-71c2-4345-8cf2-750b6616f455"
+      }
+    }
   }
 }

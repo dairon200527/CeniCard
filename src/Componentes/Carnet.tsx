@@ -128,30 +128,39 @@ const Carnet = ({ navigation }: any) => {
 
           {/*ATRÁS*/}
           <Animated.View style={[
-            styles.carnetCard,
-            styles.carnetAtras,
-            { transform: [{ rotateY: rotacionAtras }], backfaceVisibility: 'hidden' },
-          ]}>
-            <Text style={styles.infoTitle}>Información del{'\n'}usuario</Text>
-            {[
-              { icon: 'people-outline',         label: 'FICHA',                   valor: '3066747' },
-              { icon: 'add-circle-outline',      label: 'EPS',                     valor: 'Compensar EPS' },
-              { icon: 'phone-portrait-outline',  label: 'CELULAR',                 valor: '+57 316 6457890' },
-              { icon: 'heart-outline',           label: 'CONDICIÓN MÉDICA',        valor: 'Discapacidad Auditiva' },
-              { icon: 'people-circle-outline',   label: 'CONTACTO DE EMERGENCIA',  valor: 'Andrea Gamboa (Madre)\n+57 311 987 6543' },
-              { icon: 'settings-outline',        label: 'PERFIL PROFESIONAL',      valor: 'Desarrollador de software con habilidades de liderazgo y gusto por el arte.' },
-            ].map((item) => (
-              <View key={item.label} style={styles.infoRow}>
-                <View style={styles.infoIconWrapper}>
-                  <Ionicons name={item.icon as any} size={20} color="#2E7D32" />
-                </View>
-                <View style={styles.infoTextos}>
-                  <Text style={styles.infoLabel}>{item.label}</Text>
-                  <Text style={styles.infoValor}>{item.valor}</Text>
-                </View>
-              </View>
-            ))}
-          </Animated.View>
+  styles.carnetCard,
+  styles.carnetAtras,
+  { transform: [{ rotateY: rotacionAtras }], backfaceVisibility: 'hidden' },
+]}>
+  
+  <ScrollView
+    showsVerticalScrollIndicator={false}
+    contentContainerStyle={{ paddingBottom: 10 }}
+  >
+    <Text style={styles.infoTitle}>Información del{'\n'}usuario</Text>
+
+    {[
+      { icon: 'people-outline', label: 'FICHA', valor: '3066747' },
+      { icon: 'add-circle-outline', label: 'EPS', valor: 'Compensar EPS' },
+      { icon: 'phone-portrait-outline', label: 'CELULAR', valor: '+57 316 6457890' },
+      { icon: 'heart-outline', label: 'CONDICIÓN MÉDICA', valor: 'Discapacidad Auditiva' },
+      { icon: 'people-circle-outline', label: 'CONTACTO DE EMERGENCIA', valor: 'Andrea Gamboa\n+57 311 500 1234' },
+      { icon: 'settings-outline', label: 'PERFIL PROFESIONAL', valor: 'Desarrollador de software apasionado por crear soluciones escalables ' },
+    ].map((item) => (
+      <View key={item.label} style={styles.infoRow}>
+        <View style={styles.infoIconWrapper}>
+          <Ionicons name={item.icon as any} size={20} color="#2E7D32" />
+        </View>
+        <View style={styles.infoTextos}>
+          <Text style={styles.infoLabel}>{item.label}</Text>
+          <Text style={styles.infoValor}>{item.valor}</Text>
+        </View>
+      </View>
+    ))}
+
+  </ScrollView>
+
+</Animated.View>
 
         </TouchableOpacity>
       </ScrollView>

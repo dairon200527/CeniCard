@@ -29,12 +29,21 @@ const estadoColor: Record<string, string> = {
   'Ocupado':       '#F57F17',
 };
 
+
+
 const Servicios = ({ navigation }: any) => {
   const [categoriaActiva, setCategoriaActiva] = useState<Categoria>('Portatiles');
   const [tabActivo, setTabActivo]             = useState<TabActivo>('Trabajo');
   const [modalCodigo, setModalCodigo]         = useState(false);
   const [modalPrestamos, setModalPrestamos]   = useState(false);
   const [codigo, setCodigo]                   = useState('');
+
+  const [modalSolicitud, setModalSolicitud] = useState(false);
+const [equipoSeleccionado, setEquipoSeleccionado] = useState<any>(null);
+
+const [nombre, setNombre] = useState('');
+const [ficha, setFicha] = useState('');
+const [motivo, setMotivo] = useState('');
 
   return (
     <View style={styles.fondoinicial}>
@@ -118,9 +127,17 @@ const Servicios = ({ navigation }: any) => {
             resizeMode="contain"
             />
             <Text style={styles.equipoNumero}>{eq.numero}</Text>
-              <TouchableOpacity style={styles.btnSolicitar}>
-                <Text style={styles.btnSolicitarText}>Solicitar</Text>
-              </TouchableOpacity>
+             <TouchableOpacity 
+  style={styles.btnSolicitar}
+  onPress={() => {
+    if (eq.estado !== 'Disponible') return;
+
+    setEquipoSeleccionado(eq);
+    setModalSolicitud(true);
+  }}
+>
+  <Text style={styles.btnSolicitarText}>Solicitar</Text>
+</TouchableOpacity>
         </View>
       ))}
       </View>
@@ -165,6 +182,63 @@ const Servicios = ({ navigation }: any) => {
           </View>
         </View>
       </Modal>
+
+      {/* Modal Solicitud */}
+<Modal visible={modalSolicitud} transparent animationType="slide">
+  <View style={styles.modalOverlay}>
+    <View style={styles.modalCard}>
+      
+      <Text style={styles.modalTitle}>Solicitar equipo</Text>
+      <Text style={styles.modalSubtitle}>
+        Equipo #{equipoSeleccionado?.numero}
+      </Text>
+
+      <TextInput
+        style={styles.modalInput}
+        placeholder="Nombre completo"
+        placeholderTextColor="#8B9F8F"
+        value={nombre}
+        onChangeText={setNombre}
+      />
+
+      <TextInput
+        style={styles.modalInput}
+        placeholder="Ficha"
+        placeholderTextColor="#8B9F8F"
+        value={ficha}
+        onChangeText={setFicha}
+        keyboardType="numeric"
+      />
+
+      <TouchableOpacity 
+        style={styles.modalBtn}
+        onPress={() => {
+          console.log({
+            equipo: equipoSeleccionado,
+            nombre,
+            ficha,
+            motivo
+          });
+
+          // cerrar modal
+          setModalSolicitud(false);
+
+          // limpiar
+          setNombre('');
+          setFicha('');
+          setMotivo('');
+        }}
+      >
+        <Text style={styles.modalBtnText}>ENVIAR SOLICITUD</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => setModalSolicitud(false)}>
+        <Text style={styles.modalCancelar}>Cancelar</Text>
+      </TouchableOpacity>
+
+    </View>
+  </View>
+</Modal>
 
     </View>
   );

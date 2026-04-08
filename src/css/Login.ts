@@ -10,52 +10,49 @@ const styles = StyleSheet.create({
   },
 
   containerfondo: {
-  height: 260, 
-  backgroundColor: '#007832',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-},
+    height: height * 0.3,
+    backgroundColor: '#007832',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
 
   chicaimg: {
-    width: '68%',
-    height: 220,
+    width: '70%',
+    height: 200,
     resizeMode: 'contain',
-    right :10,
   },
 
   logoimg: {
     position: 'absolute',
-    top: 30,
-    right: 13,
-    width: 78,
-    height: 88,
+    top: 20,
+    right: 15,
+    width: 70,
+    height: 80,
     resizeMode: 'contain',
   },
 
- LoginContainer: {
-  backgroundColor: '#FFFFFF',
-  borderTopLeftRadius: 92,
-  paddingHorizontal: 28,
-  paddingTop: 32,
-  paddingBottom: 520, 
-  marginTop: 0,
-},
+  LoginContainer: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: 92,
+    paddingHorizontal: 28,
+    paddingTop: 32,
+    paddingBottom: 40,
+  },
 
   title: {
-    fontSize: 48,
+    fontSize: 40,
     fontWeight: '800',
     color: '#4d4c4c',
     textAlign: 'center',
-    lineHeight: 44,
-    marginBottom: 8,
+    marginBottom: 10,
   },
 
   subtitle: {
-    fontSize: 19,
+    fontSize: 18,
     color: '#666',
     textAlign: 'center',
-    marginBottom: 28,
-    top:15
+    marginBottom: 25,
   },
 
   subtitleBold: {
@@ -64,59 +61,52 @@ const styles = StyleSheet.create({
   },
 
   inputLabel: {
-    fontSize: 16,
+    fontSize: 15,
     color: '#333',
-    marginBottom: 6,
-    marginLeft: 2,
-    top:10
+    marginBottom: 5,
+    marginTop: 10,
   },
 
   input: {
     backgroundColor: '#c8e6c99a',
     borderRadius: 30,
     paddingHorizontal: 16,
-    paddingVertical: 14,
+    paddingVertical: 12,
     fontSize: 14,
     color: '#333',
-    marginBottom: 16,
-    top:10
+    marginBottom: 10,
   },
 
-  
   button: {
     backgroundColor: '#2D6A2D',
     borderRadius: 30,
-    paddingVertical: 16,
-    marginHorizontal:50,
-    top:30,
+    paddingVertical: 15,
+    marginHorizontal: 20,
+    marginTop: 20,
     alignItems: 'center',
-    marginBottom: 20,
-  },
-
-  forgotPassword: {
-    color: '#007832',
-    fontWeight: '600',
-    textAlign: 'center',
-    fontSize: 16,
-    marginBottom: 20,
-    top:40
-    
   },
 
   buttonText: {
     color: '#FFFFFF',
     fontWeight: '700',
     fontSize: 15,
-    letterSpacing: 1.6,
+    letterSpacing: 1.5,
+  },
+
+  forgotPassword: {
+    color: '#007832',
+    fontWeight: '600',
+    textAlign: 'center',
+    fontSize: 15,
+    marginTop: 15,
   },
 
   registerRow: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 20,
     flexWrap: 'wrap',
-    top:50,
-   
   },
 
   registerText: {
@@ -125,10 +115,9 @@ const styles = StyleSheet.create({
   },
 
   registerLink: {
-    fontSize: 17,
+    fontSize: 15,
     color: '#007832',
     fontWeight: '800',
-    
   },
 
 });

@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
+
+const { height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
 
@@ -8,25 +10,24 @@ const styles = StyleSheet.create({
   },
 
   containerfondo: {
-    height: 260,
+    height: height * 0.25, // 👈 más pequeño porque hay más contenido
     backgroundColor: '#007832',
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
 
   chicaimg: {
-    width: '68%',
-    height: 220,
+    width: '65%',
+    height: 180,
     resizeMode: 'contain',
-    right: 10,
   },
 
   logoimg: {
     position: 'absolute',
-    top: 30,
-    right: 13,
-    width: 78,
-    height: 88,
+    top: 20,
+    right: 15,
+    width: 70,
+    height: 80,
     resizeMode: 'contain',
   },
 
@@ -34,35 +35,33 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
     borderTopLeftRadius: 92,
-    paddingHorizontal: 24,
-    paddingTop: 32,
+    paddingHorizontal: 20,
+    paddingTop: 25,
     paddingBottom: 40,
-    marginTop: 0,
   },
 
   title: {
-    fontSize: 38,
+    fontSize: 34,
     fontWeight: '800',
     color: '#4d4c4c',
     textAlign: 'center',
-    lineHeight: 44,
-    marginBottom: 24,
+    marginBottom: 20,
   },
 
-  
   row: {
     flexDirection: 'row',
-    gap: 10,
+    justifyContent: 'space-between', // 👈 clave
     marginBottom: 12,
   },
 
   col: {
     flex: 1,
+    marginRight: 8,
   },
 
-  
   colWide: {
     flex: 2,
+    marginRight: 8,
   },
 
   colNarrow: {
@@ -70,16 +69,16 @@ const styles = StyleSheet.create({
   },
 
   inputLabel: {
-    fontSize: 15,
+    fontSize: 14,
     color: '#333',
     marginBottom: 5,
   },
 
   input: {
     backgroundColor: '#c8e6c99a',
-    borderRadius: 30,
+    borderRadius: 25,
     paddingHorizontal: 12,
-    paddingVertical: 12,
+    paddingVertical: 10,
     fontSize: 13,
     color: '#333',
   },
@@ -87,9 +86,9 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#2D6A2D',
     borderRadius: 30,
-    paddingVertical: 16,
-    marginHorizontal: 50,
-    marginTop: 24,
+    paddingVertical: 15,
+    marginHorizontal: 20,
+    marginTop: 20,
     alignItems: 'center',
   },
 
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontWeight: '700',
     fontSize: 15,
-    letterSpacing: 1.6,
+    letterSpacing: 1.5,
   },
 
 });
